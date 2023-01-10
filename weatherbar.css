@@ -1,0 +1,45 @@
+/* Weather bar */
+
+.search button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 2.2em;
+  width: 2.2em;
+  outline: none;
+  background: #7c7c7c2b;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #7c7c7c6b;
+}
+
+input.search-bar {
+  border: none;
+  outline: none;
+  padding: 0.3em;
+  border-radius: 12px;
+  background-color: #7c7c7c2b;
+  font-family: inherit;
+  font-size: 100%;
+  color: white;
+}
+
+.box {
+  padding: 1em;
+  background-color: rgba(17, 17, 17, 0.5);
+  border-radius: 40px;
+}
+
+.card {
+  display: grid;
+  justify-content: right;
+  margin: 0;
+  color: white;
+}
+.search {
+  margin: 1em;
+}

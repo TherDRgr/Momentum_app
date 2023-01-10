@@ -12,10 +12,8 @@ function showTime() {
         sec = today.getSeconds();
 
     const amPm = hour >= 12 ? 'PM' : 'AM';
-
     hour = hour % 12 || 12;
-
-    time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)} ${amPm}`;
+    time.innerHTML = `${hour}:${addZero(min)}:${addZero(sec)} ${amPm}`;
 
     setTimeout(showTime, 1000);
 }
@@ -28,13 +26,13 @@ function setBg() {
     let hour = new Date().getHours();
 
     if (hour < 12) {
-        document.body.style.backgroundImage = 'url(images/morning.png)';
+        document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?sunrise-1440p")';
         greeting.textContent = 'Good Morning, ';
     } else if (hour < 18) {
-        document.body.style.backgroundImage = 'url(images/afternoon.jpg)';
+        document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?italy")';
         greeting.textContent = 'Good Afternoon, ';
     } else {
-        document.body.style.backgroundImage = 'url(images/night.jpg)';
+        document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?night")';
         greeting.textContent = 'Good Evening, ';
         document.body.style.color = 'white';
     }
@@ -42,7 +40,7 @@ function setBg() {
 
 function getName() {
     if (localStorage.getItem('name') === null) {
-        name.textContent = '[Enter Name]';
+        name.textContent = "[Enter Name]";
     } else {
         name.textContent = localStorage.getItem('name');
     }
@@ -50,7 +48,7 @@ function getName() {
 
 function getFocus() {
     if (localStorage.getItem('focus') === null) {
-        focus.textContent = '[Enter Focus]';
+        focus.textContent = "[Enter Focus]";
     } else {
         focus.textContent = localStorage.getItem('focus');
     }
@@ -63,10 +61,10 @@ if (localStorage.getItem('name') === null && localStorage.getItem('focus') === n
         progressSteps: ['1', '2']
     }).queue([
         {
-            title: 'Your Name'
+            title: "Your Name"
         },
         {
-            focus: 'Your Focus'
+            title: "Your Focus"
         }
     ]).then((result) => {
         if (result.value) {
@@ -76,7 +74,7 @@ if (localStorage.getItem('name') === null && localStorage.getItem('focus') === n
               <p>Your Name: ${result.value[0]}</p>
               <p>Your Focus: ${result.value[1]}</p>
             `,
-                confirmButtonText: 'Lovely!'
+                confirmButtonText: 'Way to Go!'
             })
 
             localStorage.setItem('name', result.value[0]);
@@ -94,3 +92,4 @@ showTime();
 setBg();
 getName();
 getFocus();
+
